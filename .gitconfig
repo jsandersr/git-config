@@ -1,0 +1,48 @@
+[user]
+	# The name you want to appear in commit messages here (no quotes). Can be your realname or handle.
+    # example: Jane Doe
+	name = <name>
+
+	# The email associated with your account (no quotes). This will need to match your credentials when you commmit.
+    # example: a@1.com
+	email = <email>
+
+[core]
+	# example: 'C:/Program Files/Sublime Text 3/subl.exe' -w -n
+	editor = <path to editor>
+	autocrlf = true
+	trustctime = false
+	preloadindex = true
+	fscache = true
+
+[diff]
+	tool = araxis
+
+[difftool "araxis"]
+	# example C:\\Program Files\\Araxis\\Araxis Merge\\Compare.exe
+	path = <path to difftool>
+
+[alias]
+	st = status
+	d = diff
+	co = checkout
+	a = add
+	cm = commit
+	pr = pull --rebase
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit --date=relative --format=format:'%C(red)%h%C(reset) - %C(green)(%cr)%C(reset) %s - %C(dim cyan)%an%C(reset) %C(auto)%d%C(reset)'
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+
+[merge]
+	# araxismergetool
+	tool = <name of mergetool>
+	stat = true
+
+# Use the below config for araxis merge or use something else depending on your tool.
+#[mergetool "araxismergetool"]
+	#cmd = 'C:\\Program Files\\Araxis\\Araxis Merge\\araxisgitmerge.exe' "$REMOTE" "$BASE" "$PWD/$LOCAL" "$PWD/$MERGED"
+	#trustExitCode = false
+
+[gc]
+	auto = 256
+[credential]
+	helper = manager
